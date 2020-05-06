@@ -156,8 +156,7 @@ ROOMS = {
 }
 
 
-def runner(map, start):
-    next = start
+def runner(map, next):
 
     while True:
         room = map[next]
