@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #-*- coding:UTF-8 -*-
-
-i = int(input("请输入当月利润："))
 """
+i = int(input("请输入当月利润："))
+
 if i <= 100000:
     j = i * 0.1
 elif i <= 200000:
@@ -17,13 +17,14 @@ else:
     j = 10000 + 7500 + 10000 + 6000 + 6000 + (i - 1000000) * 0.01
 print("应发放奖金为：",j)
 """
-arr = [1000000,600000,400000,200000,100000,0]
-rat = [0.01,0.015,0.03,0.05,0.075,0.1]
-r = 0
-for idx in range(0,6):
-    if i>arr[idx]:
-        r+=(i-arr[idx])*rat[idx]
-        print (i-arr[idx])*rat[idx]
-        i=arr[idx]
 
-print(r)
+i = int(input("请输入当月利润："))
+arr = [1000000, 600000, 400000, 200000, 100000, 0]
+j = [0.01, 0.015, 0.03, 0.05, 0.075, 0.1]
+r = 0
+for k in range(0, 6):
+    if i > arr[k]:
+        r += (i - arr[k]) * j[k]
+        i = arr[k]
+
+print("应发放奖金：%d"%r)
