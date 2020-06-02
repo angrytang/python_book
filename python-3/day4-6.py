@@ -6,7 +6,10 @@ for i in range(row):
 
 for i in range(row):
     for j in range(row):
-        print(' ', end='')
+        if j < row - i -1:
+            print(' ', end='')
+        else:
+            print('*', end='')
     print()
 
 for i in range(row):
