@@ -12,9 +12,10 @@ class Employee(object, metaclass=ABCMeta):
     def get_salary(self):
         pass
 
+
 class Manager(Employee):
     def get_salary(self):
-        return 15000
+        return 15000.0
 
 
 class Programmer(Employee):
@@ -31,10 +32,10 @@ class Programmer(Employee):
         self._working_hour = working_hour if working_hour > 0 else 0
 
     def get_salary(self):
-        return 150 * self._working_hour
+        return 150 *self._working_hour
 
 
-class Salesman(Employee):
+class Saleman(Employee):
     def __init__(self, name, sales=0):
         super().__init__(name)
         self._sales = sales
@@ -52,13 +53,14 @@ class Salesman(Employee):
 
 
 def main():
-    emps = [Manager('刘备'), Programmer('诸葛亮'), Salesman('荀彧')]
+    emps= [Manager('刘备'), Programmer('诸葛亮'), Saleman('荀彧')]
     for emp in emps:
         if isinstance(emp, Programmer):
             emp.working_hour = int(input('请输入%s本月工作时间：'%emp.name))
-        elif isinstance(emp, Salesman):
+        elif isinstance(emp, Saleman):
             emp.sales = float(input('请输入%s本月销售额：'%emp.name))
         print('%s本月工资为：%s元'%(emp.name, emp.get_salary()))
+
 
 if __name__ == '__main__':
     main()
